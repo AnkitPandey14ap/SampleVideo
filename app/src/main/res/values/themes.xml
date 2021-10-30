@@ -23,6 +23,12 @@
 
     <style name="Theme.VideoPlayer.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryDark">@color/teal_200</item>
+        <item name="colorAccent">@color/black</item>
+    </style>
     <style name="FullScreen" parent="AppTheme">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
