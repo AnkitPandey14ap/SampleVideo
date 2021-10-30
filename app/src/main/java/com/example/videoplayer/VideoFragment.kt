@@ -11,7 +11,6 @@ import com.example.videoplayer.viewpager2.VideosAdapter
 import java.util.*
 
 class VideoFragment : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,14 +28,18 @@ class VideoFragment : Fragment() {
     }
 
     private fun generateList(): List<VideoItem> {
+//        private val dashUrl = "https://storage.googleapis.com/wvmedia/clear/vp9/tears/tears_uhd.mpd"
+//        private val mp4Url = "https://html5demos.com/assets/dizzy.mp4"
+
+
         val videoItems: MutableList<VideoItem> = ArrayList()
         val item = VideoItem()
-        item.videoURL = "https://liciolentimo.co.ke/img/videos/facebook.mp4"
+        item.videoURL = "https://storage.googleapis.com/wvmedia/clear/vp9/tears/tears_uhd.mpd"
         item.videoTitle = "Women In Tech"
         item.videoDesc = "International Women's Day 2019"
         videoItems.add(item)
         val item2 = VideoItem()
-        item2.videoURL = "https://liciolentimo.co.ke/img/videos/facebook3.mp4"
+        item2.videoURL = "https://html5demos.com/assets/dizzy.mp4"
         item2.videoTitle = "Sasha Solomon"
         item2.videoDesc = "How Sasha Solomon Became a Software Developer at Twitter"
         videoItems.add(item2)

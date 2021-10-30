@@ -3,12 +3,16 @@ package com.example.videoplayer.viewpager2
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import android.widget.TextView
-import android.widget.VideoView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.videoplayer.R
+import com.example.videoplayer.player.VideoPlayer
 import com.example.videoplayer.viewpager2.VideosAdapter.VideoViewHolder
+import com.google.android.exoplayer2.Player
+import com.google.android.exoplayer2.upstream.DataSource
+import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
+import com.google.android.exoplayer2.util.Util
+import kotlinx.android.synthetic.main.item_videos_container.view.*
+
 
 class VideosAdapter(private val mVideoItems: List<VideoItem>) :
     RecyclerView.Adapter<VideoViewHolder>() {
@@ -28,38 +32,17 @@ class VideosAdapter(private val mVideoItems: List<VideoItem>) :
     }
 
     class VideoViewHolder(itemView: View) :
-        RecyclerView.ViewHolder(itemView) {
-        var mVideoView: VideoView
-        var txtTitle: TextView
-        var txtDesc: TextView
-        var mProgressBar: ProgressBar
+        RecyclerView.ViewHolder(itemView), Player.EventListener {
+        private var player: VideoPlayer? = null
+
+        var dataSourceFactory: DataSource.Factory = DefaultDataSourceFactory(
+            itemView.context, "exoplayer-sample")
+
         fun setVideoData(videoItem: VideoItem) {
-            txtTitle.text = videoItem.videoTitle
-            txtDesc.text = videoItem.videoDesc
-            mVideoView.setVideoPath(videoItem.videoURL)
-            mVideoView.setOnPreparedListener { mp ->
-                mProgressBar.visibility = View.GONE
-                mp.start()
-                val videoRatio =
-                    mp.videoWidth / mp.videoHeight.toFloat()
-                val screenRatio =
-                    mVideoView.width / mVideoView.height.toFloat()
-                val scale = videoRatio / screenRatio
-                if (scale >= 1f) {
-                    mVideoView.scaleX = scale
-                } else {
-                    mVideoView.scaleY = 1f / scale
-                }
-            }
-            mVideoView.setOnCompletionListener { mp -> mp.start() }
+            player = VideoPlayer.getInstance(itemView.context)
+            videoItem.videoURL?.let { player?.initVideo(it, itemView.exoplayerView, this, dataSourceFactory) }
         }
 
-        init {
-            mVideoView = itemView.findViewById(R.id.videoView)
-            txtTitle = itemView.findViewById(R.id.txtTitle)
-            txtDesc = itemView.findViewById(R.id.txtDesc)
-            mProgressBar = itemView.findViewById(R.id.progressBar)
-        }
     }
 
 }
