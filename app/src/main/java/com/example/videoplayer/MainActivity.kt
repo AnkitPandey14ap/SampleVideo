@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity(), Player.EventListener {
     private var playbackPosition: Long = 0
     private val mp4Url = "https://html5demos.com/assets/dizzy.mp4"
     private val dashUrl = "https://storage.googleapis.com/wvmedia/clear/vp9/tears/tears_uhd.mpd"
-    private val urlList = listOf(mp4Url to "default", dashUrl to "dash")
+//    private val urlList = listOf(mp4Url to "default", dashUrl to "dash")
 
     private val dataSourceFactory: DataSource.Factory by lazy {
         DefaultDataSourceFactory(this, "exoplayer-sample")
