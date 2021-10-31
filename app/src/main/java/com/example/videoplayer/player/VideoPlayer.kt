@@ -31,9 +31,9 @@ class VideoPlayer {
         fun getInstance(context: Context): VideoPlayer? {
             if (instance == null) {
 //                synchronized(VideoPlayer::class.java) {
-                    if (instance == null) {
+//                    if (instance == null) {
                         instance = VideoPlayer(context)
-                    }
+//                    }
 //                }
             }
             return instance

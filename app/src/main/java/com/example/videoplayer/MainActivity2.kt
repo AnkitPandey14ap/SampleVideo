@@ -1,8 +1,6 @@
 package com.example.videoplayer
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
@@ -12,7 +10,7 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
-        loadFragment(FirstFragment())
+        loadFragment(VideoPagerFragment())
     }
 
     private fun loadFragment(fragment: Fragment){
