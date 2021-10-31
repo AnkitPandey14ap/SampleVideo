@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <com.google.android.exoplayer2.ui.PlayerView
         android:id="@+id/exoplayerView"
-        android:layout_width="0dp"
-        app:resize_mode="fill"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:use_controller="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:resize_mode="fill"
+        app:use_controller="true">
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -22,4 +22,39 @@
             android:visibility="invisible" />
 
     </com.google.android.exoplayer2.ui.PlayerView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/view_vote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp">
+
+        <include layout="@layout/layout_vote" />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/view_vote"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="6dp"
+        android:layout_toLeftOf="@+id/view_action">
+
+        <include layout="@layout/layout_user" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/view_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/view_vote"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp">
+
+        <include layout="@layout/layout_actions" />
+    </FrameLayout>
+
+
+</RelativeLayout>
