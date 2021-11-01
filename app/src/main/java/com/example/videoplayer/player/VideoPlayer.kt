@@ -7,15 +7,19 @@ import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.source.MediaSource
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
 import com.google.android.exoplayer2.source.dash.DashMediaSource
+import com.google.android.exoplayer2.source.hls.HlsMediaSource
 import com.google.android.exoplayer2.ui.PlayerView
 import com.google.android.exoplayer2.upstream.DataSource
 
+
 enum class StreamType {
     DEFAULT,
-    DASH
+    DASH,
+    HLS
 }
 
 class VideoPlayer {
+    private var playbackState: Int?=-1
     private var playbackPosition: Long? = 0
     private var simpleExoplayer: SimpleExoPlayer? = null
 
@@ -29,13 +33,13 @@ class VideoPlayer {
     companion object {
         private var instance: VideoPlayer? = null
         fun getInstance(context: Context): VideoPlayer? {
-            if (instance == null) {
+//            if (instance == null) {
 //                synchronized(VideoPlayer::class.java) {
 //                    if (instance == null) {
-                        instance = VideoPlayer(context)
+            instance = VideoPlayer(context)
 //                    }
 //                }
-            }
+//            }
             return instance
         }
     }
@@ -52,16 +56,22 @@ class VideoPlayer {
         if (playbackPosition == null)
             playbackPosition = 0
         simpleExoplayer?.seekTo(playbackPosition!!)
-        simpleExoplayer?.playWhenReady = true
         simpleExoplayer?.addListener(eventListner)
 
         return true
     }
 
 
+
     private fun preparePlayer(videoUrl: String, dataSourceFactory: DataSource.Factory) {
         val uri = Uri.parse(videoUrl)
-        var type = if (videoUrl.contains(".mp4")) StreamType.DEFAULT else StreamType.DASH
+        var type = StreamType.DASH
+        if (videoUrl.contains(".mp4")){
+            type = StreamType.DEFAULT
+        }else if(videoUrl.contains(".m3u8")){
+            type = StreamType.HLS
+        }
+
         val mediaSource = buildMediaSource(uri, type, dataSourceFactory)
         simpleExoplayer?.prepare(mediaSource)
     }
@@ -74,14 +84,34 @@ class VideoPlayer {
         return if (type == StreamType.DASH) {
             DashMediaSource.Factory(dataSourceFactory)
                 .createMediaSource(uri)
-        } else {
+        } else if (type == StreamType.HLS)
+            HlsMediaSource.Factory(dataSourceFactory).createMediaSource(uri)
+        else {
             ProgressiveMediaSource.Factory(dataSourceFactory)
                 .createMediaSource(uri)
         }
     }
 
+    fun startVideo(){
+        simpleExoplayer?.playWhenReady = true
+        playbackState = simpleExoplayer?.playbackState
+    }
+
+
+     fun pausePlayer() {
+         simpleExoplayer?.playWhenReady = false
+         simpleExoplayer?.seekTo(0)
+        playbackState = simpleExoplayer?.playbackState
+    }
+
+    fun resetVideo() {
+        simpleExoplayer?.playWhenReady = false
+        playbackState = simpleExoplayer?.playbackState
+    }
+
     fun releasePlayer() {
-        playbackPosition = simpleExoplayer?.currentPosition
+//        playbackPosition = simpleExoplayer?.currentPosition
+//        playbackPosition = 0
         simpleExoplayer?.release()
     }
 }

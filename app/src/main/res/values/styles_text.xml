@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/grey_400</item>
+    </style>
+
+    <style name="Text.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Bold.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="Text.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Small.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Small">
+        <item name="android:textSize">@dimen/text_small_size</item>
+    </style>
+
+    <style name="Text.Small.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Small.White.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Small.Blanck">
+        <item name="android:textColor">@color/bomb</item>
+    </style>
+
+    <style name="Text.XSmall">
+        <item name="android:textSize">@dimen/text_xsmall_size</item>
+    </style>
+
+
+    <style name="Text.XXSmall">
+        <item name="android:textSize">@dimen/text_xxsmall_size</item>
+    </style>
+
+    <style name="Text.XXSmall.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Header">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_xxlarge_size</item>
+    </style>
+
+    <style name="Text.Header.Black">
+        <item name="android:textColor">@color/bomb</item>
+    </style>
+
+    <style name="Text.Header.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.XLarge">
+        <item name="android:textSize">@dimen/text_xlarge_size</item>
+    </style>
+
+    <style name="Text.XLarge.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.XLarge.Bold.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.XLarge.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.XXLarge">
+        <item name="android:textSize">@dimen/text_xxlarge_size</item>
+    </style>
+
+    <style name="Text.XXLarge.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.XXXLarge">
+        <item name="android:textSize">@dimen/text_xxxlarge_size</item>
+    </style>
+
+
+    <style name="Text.XLarge.Black">
+        <item name="android:textColor">@color/bomb</item>
+    </style>
+
+    <style name="Text.XLarge.Black.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="Text.Large">
+        <item name="android:textSize">@dimen/text_large_size</item>
+    </style>
+
+    <style name="Text.Large.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Large.Bold.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Large.Black">
+        <item name="android:textColor">@color/bomb</item>
+    </style>
+
+    <style name="Text.LargeWhite">
+        <item name="android:textSize">@dimen/text_large_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Large.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Large.White.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Medium">
+        <item name="android:textSize">@dimen/text_medium_size</item>
+    </style>
+
+    <style name="Text.Medium.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Medium.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Medium.White.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+<!--    <style name="Text.SaveButton">-->
+<!--        <item name="android:textSize">@dimen/text_xlarge_size</item>-->
+<!--        <item name="android:textColor">@color/white</item>-->
+<!--        <item name="android:textStyle">bold</item>-->
+<!--        <item name="android:layout_height">48dp</item>-->
+<!--        <item name="android:layout_width">match_parent</item>-->
+<!--        <item name="android:background">@drawable/gradient_orange</item>-->
+<!--        <item name="android:gravity">center</item>-->
+<!--        <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>-->
+<!--        <item name="android:clickable">true</item>-->
+<!--    </style>-->
+
+   <!-- <style name="Text.SaveButton.Disable">
+        <item name="android:background">@drawable/gradient_orange_disable</item>
+    </style>
+
+    <style name="Text.ActionButton">
+        <item name="android:background">@drawable/background_white_radius_6</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">130dp</item>
+    </style>
+
+    <style name="Text.Language">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:background">@drawable/background_border_red_radius_4</item>
+    </style>
+
+    <style name="Text.OkButton">
+        <item name="android:textSize">@dimen/text_medium_size</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/bg_orange_corner_8</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:elevation">8dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">@dimen/margin_12</item>
+
+    </style>
+
+    <style name="Text.Next">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/background_next_button_bottom_24</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:text">@string/next</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.XLarge.NO">
+        <item name="android:textColor">@color/eagle_2</item>
+    </style>
+
+    <style name="Text.Retry">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:drawableStart">@drawable/ic_retry</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:text">@string/retry</item>
+        <item name="android:background">@drawable/click_color_retry</item>
+    </style>
+
+    <style name="Text.NotificationDot">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_xsmall_size</item>
+        <item name="android:layout_height">8dp</item>
+        <item name="android:layout_width">8dp</item>
+        <item name="android:background">@drawable/background_round_red</item>
+    </style>
+
+    <style name="Text.NotificationDot.White">
+        <item name="android:background">@drawable/background_round_white_radius_16</item>
+    </style>
+
+    <style name="Text.OTP">
+        <item name="android:textColor">@color/grey_400</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingStart">32dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingEnd">32dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">-</item>
+        <item name="android:background">@drawable/background_stroke_grey_radius_8</item>
+    </style>-->
+</resources>
